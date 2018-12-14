@@ -14,7 +14,7 @@
 	<?php 
 
 	function generate_password($length=14) {
-		$chars = 'abcdefghijkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789';
+		$chars = 'abcdefghijkmnpqrstuvwxyz23456789';
 		$password = '';
 		for ( $i = 0; $i < $length; $i++ )
 			$password .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
@@ -23,61 +23,78 @@
 
 	?>
 
-	<form action="ran.php" style="text-align: center;">
+	<form action="ran.php" style="text-align: center;" name=myform>
 		<h1>The Duck & MO BNK</h1>
 		<div class="container">
-<div class="col-md-12">
-		<div class="col-md-12">
-			<h1>57-BNK48</h1>
-			<div class="input-group mb-12" >
-				
-				<input type="text" class="form-control" value="<?php echo '57'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
-				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<h1>57-BNK48</h1>
+					<div class="input-group mb-12" >
+
+						<input type="text" class="form-control" name="mytext" value="<?php echo '57'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
+
+						<div class="input-group-append">
+							<input class="btn btn-outline-secondary" onclick="javascript:copyToClipboard('myform.mytext')" type="button" value="คลอบ">
+							<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
+						</div>
+
+					</div>
 				</div>
-				
+				<br>
+				<div class="col-md-12">
+					<h1>58-BNK48</h1>
+					<div class="input-group mb-12" >
+
+						<input type="text" class="form-control" name="my" value="<?php echo '58'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
+						<div class="input-group-append">
+							<input class="btn btn-outline-secondary" onclick="javascript:copyToClipboard('myform.my')" type="button" value="คลอบ">
+							<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
+						</div>
+
+					</div>
+				</div>
+				<br>
+				<div class="col-md-12">
+					<h1>5a-BNK48</h1>
+					<div class="input-group mb-12" >
+
+						<input type="text" class="form-control" name="myt" value="<?php echo '5a'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
+						<div class="input-group-append">
+							<input class="btn btn-outline-secondary" onclick="javascript:copyToClipboard('myform.myt')" type="button" value="คลอบ">
+							<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
+						</div>
+
+					</div>
+				</div>
+				<br>
+				<div class="col-md-12">
+					<h1>5c-BNK48</h1>
+					<div class="input-group mb-12" >
+
+						<input type="text" class="form-control" name="mytex" value="<?php echo '5c'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
+						<div class="input-group-append">
+							<input class="btn btn-outline-secondary" onclick="javascript:copyToClipboard('myform.mytex')" type="button" value="คลอบ">
+							<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
+						</div>
+
+					</div>
+				</div>
+				<br>
 			</div>
 		</div>
-		<br>
-		<div class="col-md-12">
-			<h1>58-BNK48</h1>
-			<div class="input-group mb-12" >
-				
-				<input type="text" class="form-control" value="<?php echo '58'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
-				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
-				</div>
-				
-			</div>
-		</div>
-		<br>
-		<div class="col-md-12">
-			<h1>5a-BNK48</h1>
-			<div class="input-group mb-12" >
-				
-				<input type="text" class="form-control" value="<?php echo '5a'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
-				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
-				</div>
-				
-			</div>
-		</div>
-		<br>
-		<div class="col-md-12">
-			<h1>5c-BNK48</h1>
-			<div class="input-group mb-12" >
-				
-				<input type="text" class="form-control" value="<?php echo '5c'.generate_password(); ?>" aria-describedby="button-addon2" style="text-align: center;">
-				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="submit" id="button-addon2" >BNKRAN</button>
-				</div>
-				
-			</div>
-		</div>
-		<br>
-		</div>
-</div>
 	</form>
+	<script type="text/javascript">
+		function copyToClipboard(field)
+{
+    var content = eval("document."+field)
+    content.focus()
+    content.select()
+    range = content.createTextRange()
+    range.execCommand("Copy")
+    window.status="Contents copied to clipboard"
+    setTimeout("window.status=''",1800)
+}
+	</script>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
